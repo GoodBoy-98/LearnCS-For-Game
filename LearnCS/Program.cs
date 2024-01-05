@@ -281,15 +281,44 @@ namespace LearnCS
             //****
             //*****
 
-            for (int i = 0; i < 5; i++)
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    for (int j = 0; j < i + 1; j++)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //    Console.WriteLine("");
+            //}
+
+
+
+            //Random ran = new Random();
+            
+
+            //int even = 0;
+            //int odd = 0;
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    int num = ran.Next(1, 101);
+
+            //    if (num % 2 == 0) even++;
+
+            //    else odd++;
+
+            //}
+
+            //Console.WriteLine("홀 : " + odd);
+            //Console.WriteLine("짝 : " + even);
+
+            for(int i = 2; i <= 9; i++)
             {
-                for (int j = 0; j < i + 1; j++)
+                Console.WriteLine($"{i}단");
+                for(int j = 1; j <= 9; j++)
                 {
-                    Console.Write("*");
+                    Console.WriteLine($"{i} * {j} = {i * j}");
                 }
-                Console.WriteLine("");
             }
-            Console.WriteLine("asdf");
 
         }
     }
