@@ -273,25 +273,6 @@ namespace LearnCS
 
 
 
-            //별찍기
-
-            //*
-            //**
-            //***
-            //****
-            //*****
-
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    for (int j = 0; j < i + 1; j++)
-            //    {
-            //        Console.Write("*");
-            //    }
-            //    Console.WriteLine("");
-            //}
-
-
-
             //Random ran = new Random();
 
 
@@ -319,7 +300,68 @@ namespace LearnCS
             //        Console.WriteLine($"{i} * {j} = {i * j}");
             //    }
             //}
+
+
+
+            //별찍기
+
+            //*
+            //**
+            //***
+            //****
+            //*****
+
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    for (int j = 0; j < i + 1; j++)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //거꾸로 별찍기
+
+            //for (int i = 5; i >= 1; i--)
+            //{
+            //    for (int j = 0; j <= i - 1; ++j)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            //다이아몬드 찍ㄱ
+            for (int i = 1; i <= 5; i+=2)
+            {
+                for (int j = 1; j <= (5 - i) / 2; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            for(int i = 3; i >= 1; i -= 2)
+            {
+                for (int j = 1; j <= (5 - i) / 2; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
             
+
+
+
         }
     }
 }

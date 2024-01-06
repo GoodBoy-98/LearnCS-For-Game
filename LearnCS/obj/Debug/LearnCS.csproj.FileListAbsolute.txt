@@ -5,3 +5,10 @@ C:\Users\PC\source\repos\LearnCS\LearnCS\obj\Debug\LearnCS.csproj.AssemblyRefere
 C:\Users\PC\source\repos\LearnCS\LearnCS\obj\Debug\LearnCS.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\LearnCS\LearnCS\obj\Debug\LearnCS.exe
 C:\Users\PC\source\repos\LearnCS\LearnCS\obj\Debug\LearnCS.pdb
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\bin\Debug\LearnCS.exe.config
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\bin\Debug\LearnCS.exe
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\bin\Debug\LearnCS.pdb
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\obj\Debug\LearnCS.csproj.AssemblyReference.cache
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\obj\Debug\LearnCS.csproj.CoreCompileInputs.cache
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\obj\Debug\LearnCS.exe
+C:\Users\sbsgame\source\repos\LearnCS-For-Game\LearnCS\obj\Debug\LearnCS.pdb
