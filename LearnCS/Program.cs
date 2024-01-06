@@ -320,6 +320,7 @@ namespace LearnCS
             //    Console.WriteLine();
             //}
 
+
             //거꾸로 별찍기
 
             //for (int i = 5; i >= 1; i--)
@@ -331,47 +332,162 @@ namespace LearnCS
             //    Console.WriteLine();
             //}
 
-            for(int v = 5; v > 0; v--)
-            {
-                for(int x = 1; x <= 5; x++)
-                {
-                    if(x >= v) Console.Write("*");
-                    else Console.Write(" ");
-                }
-                Console.WriteLine();
-            }
+
+            //별찍기 역순
+
+            //for(int v = 5; v > 0; v--)
+            //{
+            //    for(int x = 1; x <= 5; x++)
+            //    {
+            //        if(x >= v) Console.Write("*");
+            //        else Console.Write(" ");
+            //    }
+            //    Console.WriteLine();
+            //}
 
 
 
             //다이아몬드 찍기
-            for (int i = 1; i <= 5; i+=2)
+
+            //for (int i = 1; i <= 5; i+=2)
+            //{
+            //    for (int j = 1; j <= (5 - i) / 2; j++)
+            //    {
+            //        Console.Write(" ");
+            //    }
+            //    for (int k = 1; k <= i; k++)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //for(int i = 3; i >= 1; i -= 2)
+            //{
+            //    for (int j = 1; j <= (5 - i) / 2; j++)
+            //    {
+            //        Console.Write(" ");
+            //    }
+            //    for (int k = 1; k <= i; k++)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+
+            // 배열 array
+
+            //int[] arr = new int[5];
+            //arr[0] = 10;
+            //Console.WriteLine(arr[0]);
+
+            //int a = 5;
+            //Console.WriteLine(arr.Length);
+
+            //if (arr.Length < a)
+            //arr[a] = 20;
+
+            //int[] arr2 = new int[8];
+
+            //for(int i = 0; i < arr2.Length; i++)
+            //{
+            //    arr2[i] = i;
+            //    Console.WriteLine(arr2[i]);
+            //}
+
+            //Console.WriteLine();
+
+            //arr2[4] = 20;
+            //arr2[6] = 100;
+
+            //foreach(int i in arr2)
+            //{
+            //    Console.WriteLine($"{i}");
+            //}
+
+            //배열의 선언과 초기화 방법
+
+            //int[] arr = new int[5];
+            //int[] arr2 = new int[] { 2, 10, 5, 8, 9 };
+            //int[] arr3 = { 6, 2, 42, 1, 0 }; //선언과 동시에 초기화 해야함
+
+            //foreach (int i in arr) Console.WriteLine(i);
+            //foreach (int i in arr2) Console.WriteLine(i);
+            //foreach (int i in arr3) Console.WriteLine(i);
+
+            //int[] arr4;
+            //arr4 = arr;
+
+            //int a = 5;
+            //int b = a;
+
+
+            //요일 랜덤
+            //string[] week = new string[7] { "월", "화", "수", "목", "금", "토", "일" };
+
+            //Random ran = new Random();
+            //Console.WriteLine(week[ran.Next(0, week.Length)]);
+
+
+            //배열 정렬
+
+            //오름차순
+
+            //swap
+
+            //int a = 10;
+            //int b = 20;
+
+            //Console.WriteLine($"스왑 전 - a:{a}, b:{b}");
+
+            //a = b;
+
+            //int c = a;
+            //a = b;
+            //b = c;
+
+            //Console.WriteLine($"스왑 후 - a:{a}, b:{b}");
+
+            //int[] arr = new int[] { 11, 31, 76, 1, 9, 32, 0, 8, 90, 2, 5, 7, 100, 4 };
+            //foreach ( int i in arr ) Console.WriteLine(i);
+
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    for (int j = i + 1; j < arr.Length; j++)
+            //    {
+            //        if (arr[i] > arr[j])
+            //        {
+            //            int temp = arr[i];
+            //            arr[i] = arr[j];
+            //            arr[j] = temp;
+            //        }
+            //    }
+            //}
+
+            //Array.Sort(arr);
+            //Array.Reverse(arr);
+
+            //2차원 배열
+
+            int[,] arr = new int[3, 4];
+
+            Console.WriteLine(arr.Length);
+            Console.WriteLine(arr.GetLength(0));
+            Console.WriteLine(arr.GetLength(1));
+
+            Random ran = new Random();
+
+            for(int i = 0; i<arr.GetLength(0); i++)
             {
-                for (int j = 1; j <= (5 - i) / 2; j++)
+                for(int j = 0; j <arr.GetLength(1); j++)
                 {
-                    Console.Write(" ");
-                }
-                for (int k = 1; k <= i; k++)
-                {
-                    Console.Write("*");
+                    arr[i, j] = ran.Next(0, 101);
+                    Console.Write($"arr[{i},{j}]:{arr[i,j]}  ");
                 }
                 Console.WriteLine();
             }
-
-            for(int i = 3; i >= 1; i -= 2)
-            {
-                for (int j = 1; j <= (5 - i) / 2; j++)
-                {
-                    Console.Write(" ");
-                }
-                for (int k = 1; k <= i; k++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-            
-
-
 
         }
     }
