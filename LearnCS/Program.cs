@@ -331,8 +331,19 @@ namespace LearnCS
             //    Console.WriteLine();
             //}
 
+            for(int v = 5; v > 0; v--)
+            {
+                for(int x = 1; x <= 5; x++)
+                {
+                    if(x >= v) Console.Write("*");
+                    else Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
 
-            //다이아몬드 찍ㄱ
+
+
+            //다이아몬드 찍기
             for (int i = 1; i <= 5; i+=2)
             {
                 for (int j = 1; j <= (5 - i) / 2; j++)
