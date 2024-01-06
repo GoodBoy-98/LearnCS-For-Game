@@ -293,7 +293,7 @@ namespace LearnCS
 
 
             //Random ran = new Random();
-            
+
 
             //int even = 0;
             //int odd = 0;
@@ -319,7 +319,7 @@ namespace LearnCS
             //        Console.WriteLine($"{i} * {j} = {i * j}");
             //    }
             //}
-
+            Console.WriteLine("helloworld");
         }
     }
 }
