@@ -319,7 +319,7 @@ namespace LearnCS
             //        Console.WriteLine($"{i} * {j} = {i * j}");
             //    }
             //}
-            Console.WriteLine("helloworld");
+            
         }
     }
 }
