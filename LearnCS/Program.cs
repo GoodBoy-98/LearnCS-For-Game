@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -471,24 +472,225 @@ namespace LearnCS
 
             //2차원 배열
 
-            int[,] arr = new int[3, 4];
+            //int[,] arr = new int[3, 4];
 
-            Console.WriteLine(arr.Length);
-            Console.WriteLine(arr.GetLength(0));
-            Console.WriteLine(arr.GetLength(1));
+            //Console.WriteLine(arr.Length);
+            //Console.WriteLine(arr.GetLength(0));
+            //Console.WriteLine(arr.GetLength(1));
+
+            //Random ran = new Random();
+
+            //for(int i = 0; i<arr.GetLength(0); i++)
+            //{
+            //    for(int j = 0; j <arr.GetLength(1); j++)
+            //    {
+            //        arr[i, j] = ran.Next(0, 101);
+            //        Console.Write($"arr[{i},{j}]:{arr[i,j]}  ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            int[] arr = new int[30];
+
+            //1~100 랜덤한 값을 arr 각 공간에 대입.
+
+            //1~100 사이의 숫자를 하나 입력받아서 입력받은 값이 배열안에 있는지 없는지 출력하고 있다면 그 인덱스까지 출력
 
             Random ran = new Random();
 
-            for(int i = 0; i<arr.GetLength(0); i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for(int j = 0; j <arr.GetLength(1); j++)
-                {
-                    arr[i, j] = ran.Next(0, 101);
-                    Console.Write($"arr[{i},{j}]:{arr[i,j]}  ");
-                }
-                Console.WriteLine();
+                arr[i] = ran.Next(1, 101);
             }
 
+            Console.Write("숫자 입력(1~100) : ");
+            int input = int.Parse(Console.ReadLine());
+
+
+
+            bool isFound = false;
+            int index = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == input)
+                {
+                    isFound = true;
+                    index = i;
+                    break;
+                }
+            }
+
+
+            if (isFound)
+            {
+                Console.WriteLine($"해당 값은 배열의 [{index}]번째 위치에 있습니다.");
+            }
+            else
+            {
+                Console.WriteLine("해당 값은 배열에 없습니다.");
+            }
+
+
+            //// 2차원
+            //int[,] arr = new int[4, 4];
+
+            //Console.WriteLine(arr.Length);
+            //Console.WriteLine(arr.GetLength(0));
+            //Console.WriteLine(arr.GetLength(1));
+
+            //Random ran = new Random();
+
+            //for(int i = 0; i<arr.GetLength(0); i++)
+            //{
+            //    for(int k = 0; k< arr.GetLength(1); k++)
+            //    {
+            //        arr[i, k] = ran.Next(0, 100);
+            //        Console.WriteLine($"arr[{i},{k}]:{arr[i,k]}\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //arr[0, 0] = 1000;
+            //Console.WriteLine(arr[0,0]);
+
+
+            //int[,] arr2 = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+            //foreach (int i in arr2) { Console.WriteLine(i); }
+
+            //Console.WriteLine();
+            ////3차원
+            //int[,,] arr3 = new int[2, 2, 2]
+            //{
+            //    { { 1,2},{ 3,4} },
+            //    { { 5,6}, { 7,8} }
+            //};
+
+            //Console.WriteLine(arr3[0,1,0]);
+            //foreach(int i in arr3) Console.WriteLine(i);
+
+            //int[,] arr = new int[5, 5];
+            //int id = 1;
+
+            //for(int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for(int k = 0; k < arr.GetLength(1); k++)
+            //    {
+            //        Console.Write($"{id}\t");
+            //        arr[i, k] = id++;
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+
+            //int[,] arr = new int[,]
+            //{
+            //    {1,2,3,4,5 },
+            //    {6,7,8,9,10 },
+            //    {11,12,13,14,15 },
+            //    {16,17,18,19,20 },
+            //    {21,22,23,24,25 }
+            //};
+
+
+            //for (int j = 0; j < arr.GetLength(1); j++)
+            //{
+            //    for (int i = 0; i < arr.GetLength(0); i++)
+            //    {
+            //        Console.Write($"{arr[i,j]}");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            //함수, 메소드
+            //Print(); //호출
+
+            //for (int i = 0; i < 5; i++) Print();
+
+            //Printint(100);
+
+            //int a = 20;
+            //Printint(a);
+            //PrintString("아시겠죠??");
+
+            //int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+            //PrintArray(arr);
+            //PrintArray(new int[] { 10, 11, 12, 13, 14, 15 });
+
+            //int a = Returnint(100);
+            //Console.WriteLine(a);
+
+            //int b = Add(10, 20);
+            //Console.WriteLine(b);
+
+            //Console.WriteLine(Add(1,2,3));
+            //Console.WriteLine(Add(1.4f, 2.4f));
+
         }
+
+        static void Print()
+        {
+            Console.WriteLine("안녕하세요");
+            Console.WriteLine("헬로우");
+            Console.WriteLine("봉쥬르");
+            Console.WriteLine("니하오");
+            Console.WriteLine("곤니찌와");
+        }
+
+        static void Printint(int i)
+        {
+            Console.WriteLine(i);
+        }
+
+        static void PrintString(string str)
+        {
+            Console.WriteLine(str);
+        }
+
+        static void PrintArray(int[] arr)
+        {
+            foreach(int i in arr) Console.WriteLine(i);
+        }
+
+        static int Returnint(int a)
+        {
+            return a;
+        }
+
+        static int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        static int Minus(int a, int b)
+        {
+            return a - b;
+        }
+
+        static int Divide(int a, int b)
+        {
+            return a % b;
+        }
+
+        static int Spare(int a, int b)
+        {
+            return a / b;
+        }
+
+        //메소드 오버로딩
+        //매개변수 형식 또는 갯수가 다르면 같은 이름의 메소드를 작성 가능
+
+        static int Add(int a, int b, int c) // Add가 이미 있지만 매개 변수의 갯수가 하나더 많아서 중복 가능
+        {
+            return a + b + c;
+        }
+
+        static float Add(float a, float b) // Add가 이미 있고 매개 변수 갯수도 같지만 형식이 달라서 중복 가능
+        {
+            return a + b;
+        }
+
     }
 }
