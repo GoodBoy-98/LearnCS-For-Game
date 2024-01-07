@@ -504,34 +504,37 @@ namespace LearnCS
                 arr[i] = ran.Next(1, 101);
             }
 
-            Console.Write("숫자 입력(1~100) : ");
-            int input = int.Parse(Console.ReadLine());
-
-
-
-            bool isFound = false;
-            int index = 0;
-
-            for (int i = 0; i < arr.Length; i++)
+            while (true)
             {
-                if (arr[i] == input)
+                Console.Write("숫자 입력(1~100) : ");
+                int input = int.Parse(Console.ReadLine());
+
+
+
+                bool isFound = false;
+                int index = 0;
+
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    isFound = true;
-                    index = i;
+                    if (arr[i] == input)
+                    {
+                        isFound = true;
+                        index = i;
+                        break;
+                    }
+                }
+
+
+                if (isFound)
+                {
+                    Console.WriteLine($"해당 값은 배열의 [{index}]번째 위치에 있습니다.");
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("해당 값은 배열에 없습니다.");
+                }
             }
-
-
-            if (isFound)
-            {
-                Console.WriteLine($"해당 값은 배열의 [{index}]번째 위치에 있습니다.");
-            }
-            else
-            {
-                Console.WriteLine("해당 값은 배열에 없습니다.");
-            }
-
 
             //// 2차원
             //int[,] arr = new int[4, 4];
