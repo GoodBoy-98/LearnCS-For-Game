@@ -8,11 +8,146 @@ using System.Threading.Tasks;
 
 namespace LearnCS
 {
+    class Human
+    {
+        //상태, 멤버 변수 또는 필드
+        public int m_age;
+        public string m_name;
+        public float m_weight;
+        public float m_height;
+        public string m_gender;
+
+
+        //생성자, 클래스가 new 키워드 통해서 생설 될 때 호출되는 메소드
+
+        public Human()
+        {
+            Console.WriteLine("휴먼 생성");     //기본 생성자
+        }
+
+        //생성자는 보통 멤버 변수들 초기화 할 때 쓰임
+        //생성자도 오버로딩이 가능
+        public Human(int _age, string _n, float _w, float _h, string _g)
+        {
+            m_age = _age;
+            m_name = _n;
+            m_weight = _w;
+            m_height = _h;
+            m_gender = _g;
+        }
+
+
+
+        //기능, 멤버 함수 또는 메소드
+
+        public void Eat()
+        {
+            Console.WriteLine("치킨 좋아");
+        }
+        
+        public void Talk()
+        {
+            Console.WriteLine("수다 좋아");
+        }
+
+        public void Study()
+        {
+            Console.WriteLine("c# 좋아");
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"이름:{m_name}, 나이:{m_age}, 성별:{m_gender}, 키:{m_height}, 몸무게:{m_weight}");
+        }
+
+        //소멸자, 객체가 삭제될 대 호출
+
+        ~Human() { Console.WriteLine("휴먼 삭제"); }
+    }
+
+    class Dog
+    {
+        public int age;
+        public string name;
+        public string color;
+        public string gender;
+        
+
+        public void Eat()
+        {
+            Console.WriteLine("냠냠");
+        }
+        public void Bark()
+        {
+            Console.WriteLine("멍멍");
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"이름:{name}, 나이:{age}, 색상:{color}, 성별:{gender}");
+        }
+    }
+
+
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            //2023.12.31
+            //클래스 Class
+            //Human a = new Human();
+
+            //a.m_age = 20;
+            //a.m_name = "yong";
+            //a.m_weight = 67.5f;
+            //a.m_height = 172.1f;
+            //a.m_gender = "남성";
+
+            //a.Eat();
+            //a.Study();
+            //a.Talk();
+            //a.ShowInfo();
+
+            //Human b = new Human();
+
+            //b.m_age = 20;
+            //b.m_name = "kim";
+            //b.m_weight = 64.6f;
+            //b.m_height = 179;
+            //b.m_gender = "남성";
+
+            //b.Eat();
+            //b.Study();
+            //b.Talk();
+            //b.ShowInfo();
+
+            //Dog dog = new Dog();
+
+            //dog.age = 1;
+            //dog.name = "happy";
+            //dog.color = "black";
+            //dog.gender = "male";
+
+            //dog.Bark();
+            //dog.Eat();
+            //dog.ShowInfo();
+
+            //Human human = new Human();
+
+            //Human human1 = new Human(10, "yong", 50f, 150f, "남성");
+            //human1.ShowInfo();
+
+            //Earth.Human human2 = new Earth.Human();
+            //Pandora.Human human3 = new Pandora.Human();
+
+            Human human = new Human();
+            Cat cat = new Cat(2,"나비","검정","암컷");
+            cat.ShowInfo();
+
+
+
+
+
+
 
             //반복문
 
@@ -807,46 +942,46 @@ namespace LearnCS
             //    Console.WriteLine();
             //}
 
-            int[,] arr = new int[5, 5];
-            int nextTurnCount = 4;      //방향 회전이 일어나기 까지 남은 횟수
-            int moveCount = 5;          //회전 전까지 이동 횟수
-            int turnCount = 0;          //x, y축 변경
-            int dir = 1;                //축에 따른 방향
+            //int[,] arr = new int[5, 5];
+            //int nextTurnCount = 4;      //방향 회전이 일어나기 까지 남은 횟수
+            //int moveCount = 5;          //회전 전까지 이동 횟수
+            //int turnCount = 0;          //x, y축 변경
+            //int dir = 1;                //축에 따른 방향
 
-            int x = 0;
-            int y = 0;
+            //int x = 0;
+            //int y = 0;
 
-            for(int i = 0; i < arr.Length; i++)
-            {
-                arr[y, x] = i + 1;
+            //for(int i = 0; i < arr.Length; i++)
+            //{
+            //    arr[y, x] = i + 1;
 
-                if(i == nextTurnCount)
-                {
-                    if(turnCount % 2 == 0)
-                    {
-                        moveCount--;    //다음 턴 까지 남은 이동 횟수 감소
-                    }
-                    else
-                    {
-                        dir *= -1;      //방향 변경
-                    }
+            //    if(i == nextTurnCount)
+            //    {
+            //        if(turnCount % 2 == 0)
+            //        {
+            //            moveCount--;    //다음 턴 까지 남은 이동 횟수 감소
+            //        }
+            //        else
+            //        {
+            //            dir *= -1;      //방향 변경
+            //        }
 
-                    nextTurnCount += moveCount;     //다음 턴까지 이동 횟수 추가
-                    turnCount++;
-                }
+            //        nextTurnCount += moveCount;     //다음 턴까지 이동 횟수 추가
+            //        turnCount++;
+            //    }
 
-                if (turnCount % 2 == 0) x = x + dir;    //좌우이동
-                else y = y + dir;                       //상하이동
-            }
+            //    if (turnCount % 2 == 0) x = x + dir;    //좌우이동
+            //    else y = y + dir;                       //상하이동
+            //}
 
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write($"{arr[i, j]}\t");
-                }
-                Console.WriteLine();
-            }
+            //for (int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < arr.GetLength(1); j++)
+            //    {
+            //        Console.Write($"{arr[i, j]}\t");
+            //    }
+            //    Console.WriteLine();
+            //}
 
         }
 
@@ -912,130 +1047,146 @@ namespace LearnCS
         //    return a + b;
         //}
 
-        static void Print()     //반환형식과 매개변수가 없는 메소드
-        {
-            Console.WriteLine("안녕하세요");
-            Console.WriteLine("반갑습니다");
-        }
+        //static void Print()     //반환형식과 매개변수가 없는 메소드
+        //{
+        //    Console.WriteLine("안녕하세요");
+        //    Console.WriteLine("반갑습니다");
+        //}
 
-        static void Add(int a, int b)       //반환형식이 없고 정수형 매개변수가 둘 있는 메소드
-        {
-            Console.WriteLine(a + b);
-        }
-
-
-
-        static int Add(int a, float b)      //정수형 반환 형식, 정수형, 실수형 각각 하나인 메소드
-        {
-            return a + (int)b;
-        }
-
-        static bool Move(int speed)
-        {
-            //if (speed > 0) return true;
-            //else return false;
-
-            return speed > 0 ? true : false;
-        }
-
-
-        //call by value , call by reference
-        //값에 의한 호출, 참조에 의한 호출
-
-        static void Swap(int x, int y)
-        {
-            int temp = x;
-            x = y;
-            y = temp;
-        }
-
-        static void Swap(ref int x, ref int y)
-        {
-            int temp = x;
-            x = y;
-            y = temp;
-        }
-
-
-        //out
-        //변수의 초기화 없이 참조 가능
-
-        static void Add(out int x, int y, int z)
-        {
-            //out 키워드 매개 변수에 반드시 값을 할당해야함
-            x = y + z;
-        }
-
-        static void Add(int a, int b, int c) //정수형 매개변수가 셋인 메소드
-        {
-            a = b + c;
-        }
+        //static void Add(int a, int b)       //반환형식이 없고 정수형 매개변수가 둘 있는 메소드
+        //{
+        //    Console.WriteLine(a + b);
+        //}
 
 
 
-        //params
-        //가변 인자 매개변수
-        //개수의 제한없이 매개변수를 넘기는 기능
+        //static int Add(int a, float b)      //정수형 반환 형식, 정수형, 실수형 각각 하나인 메소드
+        //{
+        //    return a + (int)b;
+        //}
 
-        static void Total(params int[] list)
-        {
-            foreach (int i in list) Console.WriteLine(i);
-        }
+        //static bool Move(int speed)
+        //{
+        //    //if (speed > 0) return true;
+        //    //else return false;
 
-        static void Total(int a, int b, int c, params int[] list)  //params 키워드를 활용한 매개변수는 하나만.
-        {                                                          //그 위치는 마지막 매개변수
-            foreach (int i in list) Console.WriteLine(i);
-        }
-
-        //재귀 함수
-        //자기 자신을 호출하는 메소드 함수
-
-        static int Factorial(int n)
-        {
-            if (n == 0) return 1;
-            else
-            {
-                return n * Factorial(n - 1);
-            }
-        }
-
-        static void Func()
-        {
-            Func();
-        }
+        //    return speed > 0 ? true : false;
+        //}
 
 
-        //배열의 모든 요소를 더해서 반환하는 메소드를 만들어주세요.
+        ////call by value , call by reference
+        ////값에 의한 호출, 참조에 의한 호출
 
-        static int TotalSum(int[] arr)
-        {
-            int sum = 0;        //매개변수의 배열안의 요소들을 더해 줄 변수
+        //static void Swap(int x, int y)
+        //{
+        //    int temp = x;
+        //    x = y;
+        //    y = temp;
+        //}
 
-            foreach (int i in arr) sum += i;     //배열 안의 요소들을 sum 변수에 더해줌
+        //static void Swap(ref int x, ref int y)
+        //{
+        //    int temp = x;
+        //    x = y;
+        //    y = temp;
+        //}
 
-            return sum;         //더한 결과를 반환
-        }
+
+        ////out
+        ////변수의 초기화 없이 참조 가능
+
+        //static void Add(out int x, int y, int z)
+        //{
+        //    //out 키워드 매개 변수에 반드시 값을 할당해야함
+        //    x = y + z;
+        //}
+
+        //static void Add(int a, int b, int c) //정수형 매개변수가 셋인 메소드
+        //{
+        //    a = b + c;
+        //}
 
 
 
-        //배열을 오름차순하는 메소드를 만들어주세요.
+        ////params
+        ////가변 인자 매개변수
+        ////개수의 제한없이 매개변수를 넘기는 기능
 
-        static void SortArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = i + 1; j < arr.Length; j++)
-                {
-                    if (arr[i] > arr[j])
-                    {
-                        int temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
-                    }
-                }
-            }
-        }
+        //static void Total(params int[] list)
+        //{
+        //    foreach (int i in list) Console.WriteLine(i);
+        //}
 
+        //static void Total(int a, int b, int c, params int[] list)  //params 키워드를 활용한 매개변수는 하나만.
+        //{                                                          //그 위치는 마지막 매개변수
+        //    foreach (int i in list) Console.WriteLine(i);
+        //}
+
+        ////재귀 함수
+        ////자기 자신을 호출하는 메소드 함수
+
+        //static int Factorial(int n)
+        //{
+        //    if (n == 0) return 1;
+        //    else
+        //    {
+        //        return n * Factorial(n - 1);
+        //    }
+        //}
+
+        //static void Func()
+        //{
+        //    Func();
+        //}
+
+
+        ////배열의 모든 요소를 더해서 반환하는 메소드를 만들어주세요.
+
+        //static int TotalSum(int[] arr)
+        //{
+        //    int sum = 0;        //매개변수의 배열안의 요소들을 더해 줄 변수
+
+        //    foreach (int i in arr) sum += i;     //배열 안의 요소들을 sum 변수에 더해줌
+
+        //    return sum;         //더한 결과를 반환
+        //}
+
+
+
+        ////배열을 오름차순하는 메소드를 만들어주세요.
+
+        //static void SortArray(int[] arr)
+        //{
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        for (int j = i + 1; j < arr.Length; j++)
+        //        {
+        //            if (arr[i] > arr[j])
+        //            {
+        //                int temp = arr[i];
+        //                arr[i] = arr[j];
+        //                arr[j] = temp;
+        //            }
+        //        }
+        //    }
+        //}
+
+
+    }
+}
+
+namespace Earth
+{
+    class Human
+    {
+
+    }
+}
+
+namespace Pandora
+{
+    class Human
+    {
 
     }
 }
