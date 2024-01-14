@@ -491,50 +491,50 @@ namespace LearnCS
             //}
 
 
-            int[] arr = new int[30];
+            //int[] arr = new int[30];
 
-            //1~100 랜덤한 값을 arr 각 공간에 대입.
+            ////1~100 랜덤한 값을 arr 각 공간에 대입.
 
-            //1~100 사이의 숫자를 하나 입력받아서 입력받은 값이 배열안에 있는지 없는지 출력하고 있다면 그 인덱스까지 출력
+            ////1~100 사이의 숫자를 하나 입력받아서 입력받은 값이 배열안에 있는지 없는지 출력하고 있다면 그 인덱스까지 출력
 
-            Random ran = new Random();
+            //Random ran = new Random();
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = ran.Next(1, 101);
-            }
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    arr[i] = ran.Next(1, 101);
+            //}
 
-            while (true)
-            {
-                Console.Write("숫자 입력(1~100) : ");
-                int input = int.Parse(Console.ReadLine());
-
-
-
-                bool isFound = false;
-                int index = 0;
-
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    if (arr[i] == input)
-                    {
-                        isFound = true;
-                        index = i;
-                        break;
-                    }
-                }
+            //while (true)
+            //{
+            //    Console.Write("숫자 입력(1~100) : ");
+            //    int input = int.Parse(Console.ReadLine());
 
 
-                if (isFound)
-                {
-                    Console.WriteLine($"해당 값은 배열의 [{index}]번째 위치에 있습니다.");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("해당 값은 배열에 없습니다.");
-                }
-            }
+
+            //    bool isFound = false;
+            //    int index = 0;
+
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        if (arr[i] == input)
+            //        {
+            //            isFound = true;
+            //            index = i;
+            //            break;
+            //        }
+            //    }
+
+
+            //    if (isFound)
+            //    {
+            //        Console.WriteLine($"해당 값은 배열의 [{index}]번째 위치에 있습니다.");
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("해당 값은 배열에 없습니다.");
+            //    }
+            //}
 
             //// 2차원
             //int[,] arr = new int[4, 4];
@@ -631,69 +631,309 @@ namespace LearnCS
             //Console.WriteLine(Add(1,2,3));
             //Console.WriteLine(Add(1.4f, 2.4f));
 
+            //Print();        //호출!! 콜!! call
+
+            //Add(1, 2);
+
+            //Console.WriteLine(Add(2, 3.14f)); //Console.WriteLine(2 + 3.14f);
+
+
+            //int x = Add(3, 4, 5);       // int y = 3 + 4 + 5;
+
+
+            //int a = 5;
+            //int b = 6;
+
+            //Add(a, b);
+
+
+            //Console.WriteLine(Move(2));
+            //Console.WriteLine(Move(0));
+
+            //int speed = 0;
+
+            ////Console.WriteLine(Move(speed));
+
+            //if(Move(speed))     //if(true)  //if(false)
+            //{
+            //    Console.WriteLine("이동 중");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("대기 중");
+            //}
+
+            //int a = 5;
+            //int b = 10;
+
+            //int x = a;
+            //int y = b;
+
+            //int temp2 = x;
+            //x = y;
+            //y = temp2;
+
+            //Console.WriteLine($"{a}, {b}");
+
+
+            //int temp = a;
+            //a = b;
+            //b= temp;
+
+            ////값에 의한 호출
+
+            //Console.WriteLine($"Swap 전 - a:{a}, b:{b}");
+
+            //Swap(a, b);
+
+            //Console.WriteLine($"Swap 후 - a:{a}, b:{b}");
+
+
+            ////참조에 의한 호출
+            //Console.WriteLine();
+
+            //Console.WriteLine($"Swap 전 - a:{a}, b:{b}");
+
+            //Swap(ref a, ref b);
+
+            //Console.WriteLine($"Swap 후 - a:{a}, b:{b}");
+
+
+            //out
+
+            //int a;
+
+            ////Add(a, 1, 2);     
+            ////메소드 호출시 기본적으론 매개변수에 변수를 활용하면 변수에 값이 할당되어있어야 함
+
+            //Add(out a, 1, 2);
+
+            //Console.WriteLine(a);
+
+
+            //int b = 0;
+
+            //Add(b, 3, 4);
+
+            //Console.WriteLine(b);
+
+
+            //params
+
+            //Total(1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 11, 12, 13, 14, 15, 16, 17);
+
+            //int[] arr = new int[] { 1, 2, 3, 4, 5 };
+
+            //Total(arr);
+
+            //Console.WriteLine(Factorial(5));
+
+            //int[] arr = new int[] { 2, 4, 6, 8, 10 };
+
+            //Console.WriteLine(TotalSum(arr));
+
+            int[] arr2 = new int[] { 10, 12, 6, 1, 9 };
+
+            Console.WriteLine("정렬 전");
+
+            foreach (int i in arr2) Console.WriteLine(i);
+
+            Console.WriteLine();
+
+            SortArray(arr2);
+
+            Console.WriteLine("정렬 후");
+
+            foreach (int i in arr2) Console.WriteLine(i);
+
         }
 
-        static void Print()
+        //static void Print()
+        //{
+        //    Console.WriteLine("안녕하세요");
+        //    Console.WriteLine("헬로우");
+        //    Console.WriteLine("봉쥬르");
+        //    Console.WriteLine("니하오");
+        //    Console.WriteLine("곤니찌와");
+        //}
+
+        //static void Printint(int i)
+        //{
+        //    Console.WriteLine(i);
+        //}
+
+        //static void PrintString(string str)
+        //{
+        //    Console.WriteLine(str);
+        //}
+
+        //static void PrintArray(int[] arr)
+        //{
+        //    foreach(int i in arr) Console.WriteLine(i);
+        //}
+
+        //static int Returnint(int a)
+        //{
+        //    return a;
+        //}
+
+        //static int Add(int a, int b)
+        //{
+        //    return a + b;
+        //}
+
+        //static int Minus(int a, int b)
+        //{
+        //    return a - b;
+        //}
+
+        //static int Divide(int a, int b)
+        //{
+        //    return a % b;
+        //}
+
+        //static int Spare(int a, int b)
+        //{
+        //    return a / b;
+        //}
+
+        ////메소드 오버로딩
+        ////매개변수 형식 또는 갯수가 다르면 같은 이름의 메소드를 작성 가능
+
+        //static int Add(int a, int b, int c) // Add가 이미 있지만 매개 변수의 갯수가 하나더 많아서 중복 가능
+        //{
+        //    return a + b + c;
+        //}
+
+        //static float Add(float a, float b) // Add가 이미 있고 매개 변수 갯수도 같지만 형식이 달라서 중복 가능
+        //{
+        //    return a + b;
+        //}
+
+        static void Print()     //반환형식과 매개변수가 없는 메소드
         {
             Console.WriteLine("안녕하세요");
-            Console.WriteLine("헬로우");
-            Console.WriteLine("봉쥬르");
-            Console.WriteLine("니하오");
-            Console.WriteLine("곤니찌와");
+            Console.WriteLine("반갑습니다");
         }
 
-        static void Printint(int i)
+        static void Add(int a, int b)       //반환형식이 없고 정수형 매개변수가 둘 있는 메소드
         {
-            Console.WriteLine(i);
+            Console.WriteLine(a + b);
         }
 
-        static void PrintString(string str)
+
+
+        static int Add(int a, float b)      //정수형 반환 형식, 정수형, 실수형 각각 하나인 메소드
         {
-            Console.WriteLine(str);
+            return a + (int)b;
         }
 
-        static void PrintArray(int[] arr)
+        static bool Move(int speed)
         {
-            foreach(int i in arr) Console.WriteLine(i);
+            //if (speed > 0) return true;
+            //else return false;
+
+            return speed > 0 ? true : false;
         }
 
-        static int Returnint(int a)
+
+        //call by value , call by reference
+        //값에 의한 호출, 참조에 의한 호출
+
+        static void Swap(int x, int y)
         {
-            return a;
+            int temp = x;
+            x = y;
+            y = temp;
         }
 
-        static int Add(int a, int b)
+        static void Swap(ref int x, ref int y)
         {
-            return a + b;
+            int temp = x;
+            x = y;
+            y = temp;
         }
 
-        static int Minus(int a, int b)
+
+        //out
+        //변수의 초기화 없이 참조 가능
+
+        static void Add(out int x, int y, int z)
         {
-            return a - b;
+            //out 키워드 매개 변수에 반드시 값을 할당해야함
+            x = y + z;
         }
 
-        static int Divide(int a, int b)
+        static void Add(int a, int b, int c) //정수형 매개변수가 셋인 메소드
         {
-            return a % b;
+            a = b + c;
         }
 
-        static int Spare(int a, int b)
+
+
+        //params
+        //가변 인자 매개변수
+        //개수의 제한없이 매개변수를 넘기는 기능
+
+        static void Total(params int[] list)
         {
-            return a / b;
+            foreach (int i in list) Console.WriteLine(i);
         }
 
-        //메소드 오버로딩
-        //매개변수 형식 또는 갯수가 다르면 같은 이름의 메소드를 작성 가능
+        static void Total(int a, int b, int c, params int[] list)  //params 키워드를 활용한 매개변수는 하나만.
+        {                                                          //그 위치는 마지막 매개변수
+            foreach (int i in list) Console.WriteLine(i);
+        }
 
-        static int Add(int a, int b, int c) // Add가 이미 있지만 매개 변수의 갯수가 하나더 많아서 중복 가능
+        //재귀 함수
+        //자기 자신을 호출하는 메소드 함수
+
+        static int Factorial(int n)
         {
-            return a + b + c;
+            if (n == 0) return 1;
+            else
+            {
+                return n * Factorial(n - 1);
+            }
         }
 
-        static float Add(float a, float b) // Add가 이미 있고 매개 변수 갯수도 같지만 형식이 달라서 중복 가능
+        static void Func()
         {
-            return a + b;
+            Func();
         }
+
+
+        //배열의 모든 요소를 더해서 반환하는 메소드를 만들어주세요.
+
+        static int TotalSum(int[] arr)
+        {
+            int sum = 0;        //매개변수의 배열안의 요소들을 더해 줄 변수
+
+            foreach (int i in arr) sum += i;     //배열 안의 요소들을 sum 변수에 더해줌
+
+            return sum;         //더한 결과를 반환
+        }
+
+
+
+        //배열을 오름차순하는 메소드를 만들어주세요.
+
+        static void SortArray(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+
 
     }
 }
