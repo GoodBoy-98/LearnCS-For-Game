@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -732,19 +733,120 @@ namespace LearnCS
 
             //Console.WriteLine(TotalSum(arr));
 
-            int[] arr2 = new int[] { 10, 12, 6, 1, 9 };
+            //int[] arr2 = new int[] { 10, 12, 6, 1, 9 };
 
-            Console.WriteLine("정렬 전");
+            //Console.WriteLine("정렬 전");
 
-            foreach (int i in arr2) Console.WriteLine(i);
+            //foreach (int i in arr2) Console.WriteLine(i);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            SortArray(arr2);
+            //SortArray(arr2);
 
-            Console.WriteLine("정렬 후");
+            //Console.WriteLine("정렬 후");
 
-            foreach (int i in arr2) Console.WriteLine(i);
+            //foreach (int i in arr2) Console.WriteLine(i);
+
+            //int[,] arr = new int[5, 5];
+            //int idx = 1;    //배열에 대입할 요소
+            //int x = 0;      //좌우측 방향 제어
+
+            //for (int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < arr.GetLength(1); j++)
+            //    {
+            //        arr[i, x] = idx++;
+
+            //        if (i % 2 == 0)
+            //        {
+            //            if (j < 4) ++x;
+            //        }
+            //        else
+            //        {
+            //            if (j < 4) --x;
+            //        }
+            //    }
+            //}
+
+            //for(int i = 0; i<arr.GetLength(0); i++)
+            //{
+            //    for(int j = 0; j<arr.GetLength(1); j++)
+            //    {
+            //        Console.Write($"{arr[i,j]}\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //int[,] arr = new int[5, 5];
+            //int idx = 1;
+            //int y = 0;
+
+            //for(int i = 0; i<arr.GetLength(0); i++)
+            //{
+            //    for(int j = 0; j<arr.GetLength(1); j++)
+            //    {
+            //        arr[y, i] = idx++;
+
+            //        if (i % 2 == 0)
+            //        {
+            //            if (j < 4) y++;
+            //        }
+            //        else
+            //        {
+            //            if (j < 4) y--;
+            //        }
+            //    }
+            //}
+
+            //for (int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < arr.GetLength(1); j++)
+            //    {
+            //        Console.Write($"{arr[i, j]}\t");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            int[,] arr = new int[5, 5];
+            int nextTurnCount = 4;      //방향 회전이 일어나기 까지 남은 횟수
+            int moveCount = 5;          //회전 전까지 이동 횟수
+            int turnCount = 0;          //x, y축 변경
+            int dir = 1;                //축에 따른 방향
+
+            int x = 0;
+            int y = 0;
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[y, x] = i + 1;
+
+                if(i == nextTurnCount)
+                {
+                    if(turnCount % 2 == 0)
+                    {
+                        moveCount--;    //다음 턴 까지 남은 이동 횟수 감소
+                    }
+                    else
+                    {
+                        dir *= -1;      //방향 변경
+                    }
+
+                    nextTurnCount += moveCount;     //다음 턴까지 이동 횟수 추가
+                    turnCount++;
+                }
+
+                if (turnCount % 2 == 0) x = x + dir;    //좌우이동
+                else y = y + dir;                       //상하이동
+            }
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write($"{arr[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
 
         }
 
